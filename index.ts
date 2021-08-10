@@ -17,5 +17,8 @@ const randomFood$ = ajax
 // randomFood$.subscribe(ajaxResponse => console.log(ajaxResponse.response.dish));
 
 forkJoin([randomName$, randomNation$, randomFood$]).subscribe(
-  (ajaxRepsonses) => console.log(ajaxRepsonses)
+  ([nameAjax, nationAjax, foodAjax]) => console.log(`${
+    nameAjax.response.first_name} is from ${
+    nationAjax.response.capital} and likes to eat ${
+    foodAjax.response.dish}.`)
 );
