@@ -11,7 +11,7 @@ const randomNation$ = ajax
 const randomFood$ = ajax
 ('https://random-data-api.com/api/food/random_food');
 
-randomName$.subscribe(ajaxResponse => console.log(ajaxResponse));
-randomName$.subscribe(ajaxResponse => console.log(ajaxResponse));
-randomName$.subscribe(ajaxResponse => console.log(ajaxResponse));
+randomName$.subscribe(ajaxResponse => console.log(ajaxResponse.response.first_name));
+randomNation$.subscribe(ajaxResponse => console.log(ajaxResponse.response.capital));
+randomFood$.subscribe(ajaxResponse => console.log(ajaxResponse.response.dish));
 
